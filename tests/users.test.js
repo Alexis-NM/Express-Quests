@@ -80,23 +80,3 @@ describe("POST /api/users", () => {
     expect(response.status).toEqual(500);
   });
 });
-
-
-
-
-
-// ...
-
-describe("POST /api/users", () => {
-  it("should return created user", async () => {
-    const newUser = {
-      firstname: "Marie",
-      lastname: "Martin",
-      email: `${crypto.randomUUID()}@wild.co`,
-      city: "Paris",
-      language: "French",
-    };
-  });
-
-  // ...
-});
