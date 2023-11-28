@@ -74,7 +74,7 @@ describe("POST /api/users", () => {
     const userWithMissingProps = { firstname: "Alexis" };
 
     const response = await request(app)
-      .post("/api/movies")
+      .post("/api/users")
       .send(userWithMissingProps);
 
     expect(response.status).toEqual(500);
