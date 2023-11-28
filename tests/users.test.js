@@ -74,29 +74,9 @@ describe("POST /api/users", () => {
     const userWithMissingProps = { firstname: "Alexis" };
 
     const response = await request(app)
-      .post("/api/movies")
+      .post("/api/users")
       .send(userWithMissingProps);
 
     expect(response.status).toEqual(500);
   });
-});
-
-
-
-
-
-// ...
-
-describe("POST /api/users", () => {
-  it("should return created user", async () => {
-    const newUser = {
-      firstname: "Marie",
-      lastname: "Martin",
-      email: `${crypto.randomUUID()}@wild.co`,
-      city: "Paris",
-      language: "French",
-    };
-  });
-
-  // ...
 });
