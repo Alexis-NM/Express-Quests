@@ -15,11 +15,15 @@ app.get("/api/movies/:id", movieControllers.getMovieById);
 app.get("/api/users", userControllers.getUsers);
 app.get("/api/users/:id", userControllers.getUserById);
 
-app.post("/api/movies", movieControllers.postMovie)
-app.post("/api/users", userControllers.postUser)
+const validateMovie = require("./middlewares/validateMovie");
+const validateUser = require("./middlewares/validateUser");
 
-app.put("/api/movies/:id", movieControllers.updateMovie);
-app.put("/api/users/:id", userControllers.updateUser);
+app.post("/api/movies", validateMovie, movieControllers.postMovie);
+app.post("/api/users", validateUser, userControllers.postUser)
+app.put("/api/movies/:id", validateMovie, movieControllers.updateMovie);
+app.put("/api/users/:id", validateUser, userControllers.updateUser);
+
 
 
 module.exports = app;
+
