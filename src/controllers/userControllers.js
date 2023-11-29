@@ -4,11 +4,11 @@ const getUsers = (req, res) => {
   database
     .query("select * from users")
     .then(([users]) => {
-      res.json(users); // use res.json instead of console.log
+      res.json(users);
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(422);
+      res.sendStatus(500);
     });
 };
 
@@ -26,7 +26,7 @@ const getUserById = (req, res) => {
 })
     .catch((err) => {
     console.error(err);
-    res.sendStatus(422);
+    res.sendStatus(500);
     });
 };
 
