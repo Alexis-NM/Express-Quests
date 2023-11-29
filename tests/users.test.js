@@ -162,11 +162,11 @@ describe("PUT /api/users/:id", () => {
 describe("DELETE /api/users/:id", () => {
   it("should delete the user", async () => {
     const newUser = {
-      firstname: "toto",
-      lastname: "le best",
+      firstname: "Marie",
+      lastname: "Martin",
       email: `${crypto.randomUUID()}@wild.co`,
-      city: "wild",
-      language: "js",
+      city: "Paris",
+      language: "French",
     };
 
     const [resultInsert] = await database.query(
